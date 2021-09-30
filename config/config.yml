@@ -217,7 +217,7 @@ defaults:
   tea_prices: &23
     price: 今日茶叶价
   notices: &24
-    tag: 公示公告
+    tag: 通知公告
     title: 标题
     content: 内容
   labs: &25
@@ -243,9 +243,9 @@ defaults:
     title: 标题
     content: 正文
     category: 分类
-    ctg_cstr: 企业建设
-    ctg_serv: 服务宣传
-    ctg_know: 生活常识
+    ctg_cstr: 城市供水
+    ctg_serv: 污水处理 
+    ctg_know: 重点项目 
   activities: &29
     tag: 党建要闻
     title: 标题

@@ -26,7 +26,9 @@ AdminUser.create!(:phone => Setting.admins.phone, :email => Setting.admins.email
 
 Lab.create!(:title => "公司简介")
 Lab.create!(:title => "组织架构")
-Lab.create!(:title => "服务承诺")
+Lab.create!(:title => "城市供水")
+Lab.create!(:title => "污水处理")
+Lab.create!(:title => "重点项目")
 
 Member.create!(:title => "成员队伍")
 
@@ -35,12 +37,22 @@ Result.create!(:title => "服务网点")
 Result.create!(:title => "用户报装")
 Result.create!(:title => "网上缴费")
 
-Notice.create!(:title => "公告")
+Notice.create!(:title => "通知公告")
 
 Report.create!(:title => "水务新闻")
 Activity.create!(:title => "党建要闻")
 
-Manage.create!(:title => "联系我们")
+Manage.create!(:title => "山东公用水务集团")
+Manage.create!(:title => "邹城公用水务有限公司")
+Manage.create!(:title => "嘉祥公用水务有限公司")
+Manage.create!(:title => "兖州公用水务有限公司")
+Manage.create!(:title => "梁山公用水务有限公司")
+Manage.create!(:title => "汶上公用水务有限公司")
+Manage.create!(:title => "北湖污水处理有限公司")
+Manage.create!(:title => "任城污水处理有限公司")
+Manage.create!(:title => "达斯玛特水务有限公司")
+Manage.create!(:title => "曲阜公用水务有限公司")
+Manage.create!(:title => "曲阜圣城供水有限公司")
 
 
 

@@ -1,11 +1,11 @@
 zh-CN:
   layouts:
     application:
-      site_title: "梁山水务有限公司"
+      site_title: "山东公用水务集团有限公司"
     application_control:
-      site_title: "梁山水务有限公司"
+      site_title: "山东公用水务集团有限公司"
     application_mobile:
-      site_title: "梁山水务有限公司"
+      site_title: "山东公用水务集团有限公司"
 
   home:
     index:
@@ -201,7 +201,7 @@ zh-CN:
   trees:
     index:
       title:
-        梁山水务有限公司
+        山东公用水务集团有限公司
   pick_records:
     index:
       title:
