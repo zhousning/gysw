@@ -1,6 +1,6 @@
 ActiveAdmin.register Lab  do
 
-  permit_params  :title, :content, :order
+  permit_params  :title, :content, :order, :pdt_date
 
   menu label: Setting.labs.tag, :priority => 1 
   config.per_page = 20
@@ -31,6 +31,7 @@ ActiveAdmin.register Lab  do
   form do |f|
     f.inputs "详情" do
       
+      #f.date :pdt_date, :label => '日期' 
       f.input :title, :label => Setting.labs.title 
       f.kindeditor :content, :label => Setting.labs.content 
       f.input :order, :label => Setting.labs.order 

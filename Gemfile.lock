@@ -375,6 +375,7 @@ DEPENDENCIES
   iconv
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   lazy_high_charts
   mini_magick
   mini_racer

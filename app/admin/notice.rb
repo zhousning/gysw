@@ -1,6 +1,6 @@
 ActiveAdmin.register Notice  do
 
-  permit_params  :title, :content
+  permit_params  :title, :content, :pdt_date
 
   menu label: Setting.notices.tag, :priority => 10 
   config.per_page = 20
@@ -26,9 +26,10 @@ ActiveAdmin.register Notice  do
   end
 
   form do |f|
-    f.inputs "详情" do
+    f.inputs "" do
       
-      f.input :title, :label => Setting.notices.title 
+      f.date_field :pdt_date, :value => Date.today
+      f.text_field :title, :placeholder => '请输入标题' 
       f.kindeditor :content, :label => Setting.notices.content 
     end
     f.actions

@@ -155,6 +155,7 @@ defaults:
     pending: 待审核
     rejected: 不通过
     passed: 通过
+    per_page: 20
   trade_orders: &16
     number: 订单编号
     price: 价格
@@ -243,9 +244,12 @@ defaults:
     title: 标题
     content: 正文
     category: 分类
-    ctg_cstr: 城市供水
-    ctg_serv: 污水处理 
-    ctg_know: 重点项目 
+    ctg_cstr: 水务动态 
+    ctg_serv: 污水治理 
+    ctg_know: 员工风采 
+    ctg_cstr_id: '0' 
+    ctg_serv_id: '1' 
+    ctg_know_id: '2' 
   activities: &29
     tag: 党建工作
     title: 标题
@@ -255,6 +259,10 @@ defaults:
     ctg_org: 党建和组织工作
     ctg_base: 基层党组织建设
     ctg_meb: 党员队伍建设
+    ctg_cmpt_id:  '0'
+    ctg_org_id:   '1'
+    ctg_base_id:  '2'
+    ctg_meb_id:   '3' 
   manages: &30
     tag: 联系我们 
     title: 标题
@@ -286,6 +294,10 @@ defaults:
     label: 首页轮播图
     title: 标题
     photo: 轮播图
+  showrooms: &33
+    label: 企业展厅 
+    title: 标题
+    photo: 图片
 development:
   admins: *1
   users: *2
@@ -319,6 +331,7 @@ development:
   manages: *30
   meter_reads: *31
   carousels: *32
+  showrooms: *33
 test:
   admins: *1
   users: *2

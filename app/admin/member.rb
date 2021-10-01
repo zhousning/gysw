@@ -1,6 +1,6 @@
 ActiveAdmin.register Member  do
 
-  permit_params  :name, :email, :homepage, :intro, :level, :photo, :file
+  permit_params  :name, :email, :homepage, :intro, :level, :photo, :file, :pdt_date
 
   menu label: Setting.members.tag, :priority => 2 
   config.per_page = 20

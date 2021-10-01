@@ -9,7 +9,7 @@
     = @activity.title
   %p.text-center
     %small
-      = "发布时间: " +  @activity.created_at.strftime('%Y-%m-%d')
+      = "发布时间: " +  @activity.pdt_date.strftime('%Y-%m-%d')
   %hr
   = @activity.content.nil? ? '' : @activity.content.html_safe
 

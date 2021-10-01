@@ -1,17 +1,28 @@
 - provide(:title, t('.title'))
 
 - content_for :sidebar_body do
-  = link_to Setting.reports.tag, reports_path, :class => "list-group-item text-dark"
+  -#
+    = link_to Setting.reports.tag, reports_path, :class => "list-group-item text-dark"
   = link_to Setting.activities.tag, activities_path, :class => "list-group-item text-dark"
 
 - content_for :content_body do
   %ul.list-group.list-group-flush
     - @activities.each_with_index do |activitie, index|
       = link_to activity_path(activitie), :class => "list-group-item list-group-item-action" do
-        %p.mb-0
-          = activitie.title
-        %p.text-right
-          %small
-            = activitie.created_at.strftime('%Y-%m-%d')
+        .row
+          .col-10
+            %p.mb-0.text-truncate
+              = '[' + activity_ctg[activitie.category] + ']'
+              = activitie.title
+          .col-2.text-right
+            %p.text-muted.font-weight-light.mb-0
+              %small
+                - if activitie.pdt_date 
+                  = activitie.pdt_date.strftime('%Y-%m-%d')
+                - else
+                  = activitie.created_at.strftime('%Y-%m-%d')
+  .row.mt-3
+    .col-md-12.site-theme-paginate-wrapper.d-flex.justify-content-center
+      = paginate @activities, window: 2, left: 1, right: 1 
 
 = render "layouts/control_panel"

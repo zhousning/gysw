@@ -1,6 +1,7 @@
 class CreateMembers < ActiveRecord::Migration
   def change
     create_table :members do |t|
+      t.date :pdt_date
       t.string :name,              null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :homepage,              null: false, default: ""

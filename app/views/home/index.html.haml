@@ -32,6 +32,22 @@
                   %p
                     新城政务中心服务大厅梁山水务业务办理窗口
                   客服热线:7366767
+      .col-9
+        %main{:role => "main"}
+          #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+            %ol.carousel-indicators
+              - @carousels.each_with_index do |c, i|          
+                %li{:class => i == 0 ? "active" : '', "data-slide-to" => i.to_s, "data-target" => "#carouselExampleIndicators"}
+            .carousel-inner.rounded-0
+              - @carousels.each_with_index do |c, i|          
+                .carousel-item{:class => i == 0 ? "active" : ''}
+                  = image_tag c.photo, :class => "d-block w-100"
+            %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
+              %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+              %span.sr-only Previous
+            %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
+              %span.carousel-control-next-icon{"aria-hidden" => "true"}
+              %span.sr-only Next
       .col-3
         .row
           .col-12
@@ -70,22 +86,6 @@
                 %p.mb-0
                   %i.fa.fa-map.text-white
                     网上缴费
-      .col-9
-        %main{:role => "main"}
-          #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
-            %ol.carousel-indicators
-              - @carousels.each_with_index do |c, i|          
-                %li{:class => i == 0 ? "active" : '', "data-slide-to" => i.to_s, "data-target" => "#carouselExampleIndicators"}
-            .carousel-inner.rounded-0
-              - @carousels.each_with_index do |c, i|          
-                .carousel-item{:class => i == 0 ? "active" : ''}
-                  = image_tag c.photo, :class => "d-block w-100"
-            %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
-              %span.carousel-control-prev-icon{"aria-hidden" => "true"}
-              %span.sr-only Previous
-            %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
-              %span.carousel-control-next-icon{"aria-hidden" => "true"}
-              %span.sr-only Next
 
 %section.my-3
   .container
@@ -100,17 +100,16 @@
                 %li.py-1.text-primary
                   = link_to truncate(notice.title, :length => 14), notice_path(notice), :class => "text-body"
       .col-9
+        .row.mb-3
+          .col-12
+            = image_tag "shuiwu.jpg", :class => "w-100"
         .card.rounded-0.border.border-white
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
-              .index-nav-tab.nav.nav-tabs{:role => "tablist"}
-                %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
-                  水务动态
-                %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
-                  污水治理
-                %a#nav-contact-tab.nav-item.nav-link{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"}
-                  一线风采
-          #nav-tabContent.tab-content.py-1
+              .index-nav-tab.nav.nav-tabs.border-primary{:role => "tablist"}
+                %a#nav-home-tab.text-primary.nav-item.nav-link.active.rounded-0.border-primary.border-bottom-0{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
+                  = Setting.reports.ctg_cstr
+          .tab-content.py-1
             #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @cmpt_cstrs.each do |cstr|
@@ -125,20 +124,42 @@
                         .col-2
                           %p.text-muted.font-weight-light.mb-0
                             48.00万
+
+        .row.mb-3
+          .col-12
+            = image_tag "wscl.jpg", :class => "w-100"
+        .card.rounded-0.border.border-white
+          .card-header.bg-white.text-success.p-0.border-0
+            %nav
+              .index-nav-tab.nav.nav-tabs.border-success{:role => "tablist"}
+                %a#nav-profile-tab.text-success.nav-item.nav-link.active.rounded-0.border-success.border-bottom-0{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+                  = Setting.reports.ctg_serv
+          .tab-content.py-1
             #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @cmpt_servs.each do |serv|
-                  %li.py-1.text-primary
+                  %li.py-1.text-success
                     .row
                       .col-10
                         = link_to truncate(serv.title, :length => 35), report_path(serv), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = serv.created_at.strftime('%Y-%m-%d')
+
+        .row.mb-3
+          .col-12
+            = image_tag "yxfc.png", :class => "w-100"
+        .card.rounded-0.border.border-white
+          .card-header.bg-white.text-info.p-0.border-0
+            %nav
+              .index-nav-tab.nav.nav-tabs.border-info{:role => "tablist"}
+                %a#nav-contact-tab.text-info.nav-item.nav-link.active.rounded-0.border-info.border-bottom-0{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"}
+                  = Setting.reports.ctg_know
+          .tab-content.py-1
             #nav-contact.tab-pane.fade{"aria-labelledby" => "nav-contact-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @cmpt_knows.each do |know|
-                  %li.py-1.text-primary
+                  %li.py-1.text-info
                     .row
                       .col-10
                         = link_to truncate(know.title, :length => 35), report_path(know), :class => "text-body"
@@ -165,18 +186,19 @@
         .card.rounded-0.border-0
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
-              .index-nav-tab.nav.nav-tabs{:role => "tablist"}
-                %a#nav-agent-tab.nav-item.nav-link.active{"aria-controls" => "nav-agent", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-agent", :role => "tab"}
-                  党建和组织工作
-                %a#nav-law-tab.nav-item.nav-link{"aria-controls" => "nav-law", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-law", :role => "tab"} 
-                  基层党组织建设
-                %a#nav-score-tab.nav-item.nav-link{"aria-controls" => "nav-score", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-score", :role => "tab"}
-                  党员队伍建设
+              .index-nav-tab.nav.nav-tabs.border-danger{:role => "tablist"}
+                %a#nav-agent-tab.text-danger.nav-item.nav-link.active.rounded-0.border-danger.border-bottom-0{"aria-controls" => "nav-agent", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-agent", :role => "tab"}
+                  党建工作
+                -#
+                  %a#nav-law-tab.nav-item.nav-link{"aria-controls" => "nav-law", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-law", :role => "tab"} 
+                    基层党组织建设
+                  %a#nav-score-tab.nav-item.nav-link{"aria-controls" => "nav-score", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-score", :role => "tab"}
+                    党员队伍建设
           #agent-tabContent.tab-content.py-1
             #nav-agent.tab-pane.fade.show.active{"aria-labelledby" => "nav-agent-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @act_orgs.each do |org|
-                  %li.py-1.text-primary
+                  %li.py-1.text-danger
                     .row
                       .col-10
                         = link_to truncate(org.title, :length => 35), activity_path(org), :class => "text-body"
@@ -187,7 +209,8 @@
                         .col-2
                           %p.text-muted.font-weight-light.mb-0
                             48.00万
-            #nav-law.tab-pane.fade{"aria-labelledby" => "nav-law-tab", :role => "tabpanel"}
+            -#
+              #nav-law.tab-pane.fade{"aria-labelledby" => "nav-law-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @act_bases.each do |base|
                   %li.py-1.text-primary
@@ -197,7 +220,8 @@
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = base.created_at.strftime('%Y-%m-%d')
-            #nav-score.tab-pane.fade{"aria-labelledby" => "nav-score-tab", :role => "tabpanel"}
+            -#
+              #nav-score.tab-pane.fade{"aria-labelledby" => "nav-score-tab", :role => "tabpanel"}
               %ul.mb-0
                 - @act_mebs.each do |meb|
                   %li.py-1.text-primary
@@ -216,10 +240,9 @@
           .card-header.p-2.rounded-0.qiyezhanting-title
             企业展厅
           .card-body.p-2
-            .border.d-flex.justify-content-center.align-items-center.mb-1
-              = image_tag "zhanting/1.jpg"
-            .border.d-flex.justify-content-center.align-items-center.mb-1
-              = image_tag "zhanting/2.jpg"
+            - if !@showrooms.blank?
+              - @showrooms[0..1].each do |room|
+                .border.image-grid-cover{:style => "background-image: url(#{image_url(room.photo)});"}
             -#
               .border.d-flex.justify-content-center.align-items-center.mb-1
                 %a{:href => "#"}
@@ -233,11 +256,11 @@
           .card-body.p-2
             .row
               .col-12
-                = link_to "梁山县人民政府", "http://www.liangshan.gov.cn/", :class => "text-muted", :target => "_blank"
+                = link_to "济宁市人民政府", "http://www.jining.gov.cn/", :class => "text-muted", :target => "_blank"
               .col-12
-                = link_to "山东公用集团", "http://www.sdgykg.com/", :class => "text-muted", :target => "_blank"
+                = link_to "济宁市城乡水务局", "http://jnsl.jining.gov.cn/", :class => "text-muted", :target => "_blank"
               .col-12
-                = link_to "梁山水务极简办公", "http://114.215.187.210", :class => "text-muted", :target => "_blank"
+                = link_to "山东公用控股有限公司", "http://www.sdgykg.com/", :class => "text-muted", :target => "_blank"
               -#
                 .col-7
                   = link_to "四川省发改委", "#", :class => "text-muted"
@@ -249,30 +272,10 @@
           .col-12
             = image_tag "shuiwu.jpg", :class => "w-100"
         .row
-          .col-3.mb-2
-            = image_tag "qiye/1.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/3.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/4.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/5.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/6.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/7.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/10.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/12.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/13.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/16.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/17.jpg", :class => "img-fluid"
-          .col-3.mb-2
-            = image_tag "qiye/20.jpg", :class => "img-fluid"
+          - if !@showrooms.blank?
+            - @showrooms[2..-1].each do |room|
+              .col-4
+                .border.image-grid-cover{:style => "background-image: url(#{image_url(room.photo)});"}
 
           -#
             #cptMembIndicators.carousel.slide{"data-ride" => "carousel"}

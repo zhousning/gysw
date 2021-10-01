@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   layout "application_control"
 
   def index
-    @activities = Activity.all.order("created_at DESC")
+    @activities = Activity.all.order("pdt_date DESC").page( params[:page]).per( Setting.systems.per_page ) 
   end
 
   def show

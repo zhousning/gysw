@@ -1,6 +1,6 @@
 ActiveAdmin.register Manage  do
 
-  permit_params  :title, :content
+  permit_params  :title, :content, :pdt_date
 
   menu label: Setting.manages.tag, :priority => 8 
   config.per_page = 20

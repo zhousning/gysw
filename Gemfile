@@ -101,7 +101,7 @@ gem 'alipay', :git=>'https://github.com/zhousning/alipay.git'
 
 gem 'lazy_high_charts'
 
-#gem 'kaminari'
+gem 'kaminari'
 
 gem 'rqrcode_png'
 

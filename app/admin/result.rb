@@ -1,6 +1,6 @@
 ActiveAdmin.register Result  do
 
-  permit_params  :title, :content, :order
+  permit_params  :title, :content, :order, :pdt_date
 
   menu label: Setting.results.tag, :priority => 3 
   config.per_page = 20
