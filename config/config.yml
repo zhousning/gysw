@@ -247,7 +247,7 @@ defaults:
     ctg_serv: 污水处理 
     ctg_know: 重点项目 
   activities: &29
-    tag: 党建要闻
+    tag: 党建工作
     title: 标题
     category: 分类
     content: 正文
@@ -282,6 +282,10 @@ defaults:
     smp_count: 抽样复查的总数量
     name: 姓名
     cal_date: 统计月份
+  carousels: &32
+    label: 首页轮播图
+    title: 标题
+    photo: 轮播图
 development:
   admins: *1
   users: *2
@@ -314,6 +318,7 @@ development:
   activities: *29
   manages: *30
   meter_reads: *31
+  carousels: *32
 test:
   admins: *1
   users: *2

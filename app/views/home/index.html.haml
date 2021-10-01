@@ -16,66 +16,76 @@
 %section.my-3
   .container.py-2.bg-white
     .row
-      .col-3
-        .card.rounded-0.border-0
-          -#
-            .card-header.bg-white.text-primary.p-2
-              业务办理地址
-          .card-body.p-0
-            %ul.list-group.list-group-flush
-              %li.list-group-item.py-e.bg-2eacce.text-white
-                %p
-                  崇文新区东门南梁山水务客服中心
-                客服热线:7360555
-              %li.list-group-item.py-3.bg-2eacce.text-white
-                %p
-                  新城政务中心服务大厅梁山水务业务办理窗口
-                客服热线:7366767
-      .col-6
-        %main{:role => "main"}
-          - content_for :carousel_first_img do
-            = image_tag "car1.png", :class => "d-block w-100"
-          - content_for :carousel_second_img do
-            = image_tag "car2.png", :class => "d-block w-100"
-          - content_for :carousel_third_img do
-            = image_tag "car3.png", :class => "d-block w-100"
-          = render "layouts/bootstrap/carousel"
+      -#
+        .col-3
+          .card.rounded-0.border-0
+            -#
+              .card-header.bg-white.text-primary.p-2
+                业务办理地址
+            .card-body.p-0
+              %ul.list-group.list-group-flush
+                %li.list-group-item.py-e.bg-2eacce.text-white
+                  %p
+                    崇文新区东门南梁山水务客服中心
+                  客服热线:7360555
+                %li.list-group-item.py-3.bg-2eacce.text-white
+                  %p
+                    新城政务中心服务大厅梁山水务业务办理窗口
+                  客服热线:7366767
       .col-3
         .row
+          .col-12
+            = image_tag "swhms.png", :class => "d-block w-100"
           .col-6.pl-0
             .border.text-center.pt-4.mb-2.py-2.bg-info
-              %a{:href => "#"}
+              = link_to result_path(@results[0]) do 
                 %p.mb-0
                   %i.fa.fa-group.fa-4x.text-white
                 %p.mb-0.text-white
                   我的用水
             .border.text-center.pt-4.py-2.bg-primary
-              %a{:href => "#"}
+              = link_to result_path(@results[1]) do 
                 %p.mb-0
                   %i.fa.fa-id-badge.fa-4x.text-white
                 %p.mb-0.text-white
                   水费查询
           .col-6.pl-0
             .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-success
-              = link_to result_path(@results.first) do 
+              = link_to result_path(@results[2]) do 
                 %p.mb-0
                   %i.fa.fa-user.text-white
                     办理指南
             .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-warning
-              = link_to result_path(@results.second) do 
+              = link_to result_path(@results[3]) do 
                 %p.mb-0
                   %i.fa.fa-list.text-white
                     服务网点
             .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-dark
-              = link_to result_path(@results.third) do 
+              = link_to result_path(@results[4]) do 
                 %p.mb-0
                   %i.fa.fa-mobile.text-white
                     用户报装
             .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-danger
-              = link_to result_path(@results.fourth) do 
+              = link_to result_path(@results[5]) do 
                 %p.mb-0
                   %i.fa.fa-map.text-white
                     网上缴费
+      .col-9
+        %main{:role => "main"}
+          #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+            %ol.carousel-indicators
+              - @carousels.each_with_index do |c, i|          
+                %li{:class => i == 0 ? "active" : '', "data-slide-to" => i.to_s, "data-target" => "#carouselExampleIndicators"}
+            .carousel-inner.rounded-0
+              - @carousels.each_with_index do |c, i|          
+                .carousel-item{:class => i == 0 ? "active" : ''}
+                  = image_tag c.photo, :class => "d-block w-100"
+            %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
+              %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+              %span.sr-only Previous
+            %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
+              %span.carousel-control-next-icon{"aria-hidden" => "true"}
+              %span.sr-only Next
 
 %section.my-3
   .container
@@ -95,11 +105,11 @@
             %nav
               .index-nav-tab.nav.nav-tabs{:role => "tablist"}
                 %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
-                  城市供水
+                  水务动态
                 %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
-                  污水处理
+                  污水治理
                 %a#nav-contact-tab.nav-item.nav-link{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"}
-                  重点项目
+                  一线风采
           #nav-tabContent.tab-content.py-1
             #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
               %ul.mb-0

@@ -14,17 +14,19 @@
         = link_to '#', :id => "one", :class => "nav-link dropdown-toggle text-center", :'data-toggle' => "dropdown", :'aria-haspopup' => 'true' do
         .dropdown-menu{:'aria-labelledby' => 'one'}
           %a.dropdown-item 33
-    = link_to root_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+    = link_to root_path, :class => "navbar-brand col mr-0 text-center" do
       首页
-    = link_to labs_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+    = link_to labs_path, :class => "navbar-brand col mr-0 text-center" do
       = Setting.labs.tag
-    = link_to results_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
-      业务办理
-    = link_to reports_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+    = link_to reports_path, :class => "navbar-brand col mr-0 text-center" do
       = Setting.reports.tag
-    = link_to notices_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+    = link_to activities_path, :class => "navbar-brand col mr-0 text-center" do
+      = Setting.activities.tag
+    = link_to results_path, :class => "navbar-brand col mr-0 text-center" do
+      业务办理
+    = link_to notices_path, :class => "navbar-brand col mr-0 text-center" do
       = Setting.notices.tag
-    = link_to manages_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+    = link_to manages_path, :class => "navbar-brand col mr-0 text-center" do
       = Setting.manages.tag
   -#
     %ul.w-100.navbar-nav.justify-content-end.px-2

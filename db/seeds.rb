@@ -26,12 +26,14 @@ AdminUser.create!(:phone => Setting.admins.phone, :email => Setting.admins.email
 
 Lab.create!(:title => "公司简介")
 Lab.create!(:title => "组织架构")
-Lab.create!(:title => "城市供水")
-Lab.create!(:title => "污水处理")
-Lab.create!(:title => "重点项目")
+Lab.create!(:title => "水务动态")
+Lab.create!(:title => "污水治理")
+Lab.create!(:title => "一线风采")
 
 Member.create!(:title => "成员队伍")
 
+Result.create!(:title => "我的用水")
+Result.create!(:title => "水费查询")
 Result.create!(:title => "办理指南")
 Result.create!(:title => "服务网点")
 Result.create!(:title => "用户报装")
@@ -40,7 +42,7 @@ Result.create!(:title => "网上缴费")
 Notice.create!(:title => "通知公告")
 
 Report.create!(:title => "水务新闻")
-Activity.create!(:title => "党建要闻")
+Activity.create!(:title => "党建工作")
 
 Manage.create!(:title => "山东公用水务集团")
 Manage.create!(:title => "邹城公用水务有限公司")

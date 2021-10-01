@@ -13,5 +13,7 @@ class HomeController < ApplicationController
     @act_mebs = Activity.where(:category => Setting.activities.ctg_meb).limit(8).order("created_at DESC")
 
     @results = Result.all
+
+    @carousels = Carousel.all
   end
 end
