@@ -87,15 +87,15 @@ gem 'mini_magick'
 
 #gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'activeadmin'
-gem 'activeadmin_blaze_theme'
+#gem 'activeadmin_blaze_theme'
 
 #gem 'omniauth'
 #gem 'omniauth-oauth2'
 
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 
 #gem 'alipay', '~> 0.12.0'
-gem 'alipay', :git=>'https://github.com/zhousning/alipay.git'
+#gem 'alipay', :git=>'https://github.com/zhousning/alipay.git'
 
 #gem 'wx_pay'
 
