@@ -2,7 +2,7 @@ ActiveAdmin.register Showroom  do
 
   permit_params :photo, :file
 
-  menu label: Setting.showrooms.label, :priority => 2 
+  menu label: Setting.showrooms.label, :priority => 3 
   config.per_page = 20
   config.sort_order = "id_asc"
 
@@ -22,7 +22,7 @@ ActiveAdmin.register Showroom  do
   form :html => {:multipart => true } do |f|
     f.inputs "详情" do
       f.input :title, :label => Setting.showrooms.title
-      f.label '请上传png或jpg图片，图片尺寸长和宽一致，大小小于500K  ' 
+      f.label '请上传png或jpg图片，每张图片尺寸保持一致，大小小于500K  ' 
       f.file_field :file, :accept => "image/png,image/jpeg"
     end
     f.actions

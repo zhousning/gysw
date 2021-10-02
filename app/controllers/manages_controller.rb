@@ -6,6 +6,7 @@ class ManagesController < ApplicationController
   end
 
   def show
+    @manages = Manage.all
     @manage = Manage.find(params[:id])
   end
 

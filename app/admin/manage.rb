@@ -2,7 +2,7 @@ ActiveAdmin.register Manage  do
 
   permit_params  :title, :content, :pdt_date
 
-  menu label: Setting.manages.tag, :priority => 8 
+  menu label: Setting.manages.tag, :priority => 10 
   config.per_page = 20
   config.sort_order = "id_asc"
 

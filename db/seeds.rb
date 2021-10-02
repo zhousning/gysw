@@ -39,10 +39,12 @@ Result.create!(:title => "服务网点")
 Result.create!(:title => "用户报装")
 Result.create!(:title => "网上缴费")
 
-Notice.create!(:title => "通知公告")
 
-Report.create!(:title => "水务新闻")
-Activity.create!(:title => "党建工作")
+#30.times.each do |t|
+#  Notice.create!(:title => "通知公告", :content => '测试用', :pdt_date => '2021-10-02')
+#  Report.create!(:category => ['0', '1', '2'].sample, :title => "水务新闻", :content => '测试用', :pdt_date => '2021-10-02')
+#  Activity.create!(:category => ['0', '1', '2', '3'].sample, :title => "党建工作", :content => '测试用', :pdt_date => '2021-10-02')
+#end
 
 Manage.create!(:title => "山东公用水务集团")
 Manage.create!(:title => "邹城公用水务有限公司")

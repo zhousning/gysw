@@ -256,7 +256,7 @@ defaults:
     category: 分类
     content: 正文
     ctg_cmpt: 公司党建
-    ctg_org: 党建和组织工作
+    ctg_org: 党建工作
     ctg_base: 基层党组织建设
     ctg_meb: 党员队伍建设
     ctg_cmpt_id:  '0'
@@ -396,3 +396,5 @@ production:
   activities: *29
   manages: *30
   meter_reads: *31
+  carousels: *32
+  showrooms: *33

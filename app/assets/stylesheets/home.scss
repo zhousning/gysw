@@ -1,6 +1,6 @@
 
 body {
-  background: image-url("spls.png") top center no-repeat;
+  background: image-url("home-header-main.jpg") top center no-repeat;
 }
 .starter-template {
   padding: 40px 15px;
@@ -105,7 +105,8 @@ body {
 }
 .image-grid-cover {
   width: 100%;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   min-height: 200px;
   position: relative;
   margin-bottom: 10px;

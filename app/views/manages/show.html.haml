@@ -1,27 +1,18 @@
 - provide(:title, t('.title'))
 
-- content_for :main_body do
-  .container-fluid
-    .row
-      .col-md-12
-        %table.table.text-center.table-bordered
-          %thead
-            %tr
-            
-              %th 
-                = Setting.manages.title
-              %th 
-                = Setting.manages.content
-              %th
-          %tbody
-            %tr
-            
-              %td
-                = @manage.title
-              %td
-                = @manage.content
-              %td
-                = link_to '返回', manages_path, :class => "btn btn-danger"
+- content_for :sidebar_body do
+  - @manages.each do |manage|
+    = link_to manage.title, manage_path(manage), :class => "list-group-item text-dark"
+
+- content_for :content_body do
+  %h5.text-center.mt-3
+    = @manage.title
+  -#
+    %p.text-center
+    %small
+      = "发布时间: " +  @manage.created_at.strftime('%Y-%m-%d')
+  %hr
+  = @manage.content.nil? ? '' : @manage.content.html_safe
     
 
 = render "layouts/control_panel"

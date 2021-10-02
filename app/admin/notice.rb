@@ -2,7 +2,7 @@ ActiveAdmin.register Notice  do
 
   permit_params  :title, :content, :pdt_date
 
-  menu label: Setting.notices.tag, :priority => 10 
+  menu label: Setting.notices.tag, :priority => 9 
   config.per_page = 20
   config.sort_order = "id_asc"
 

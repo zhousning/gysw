@@ -2,7 +2,7 @@ ActiveAdmin.register Report  do
 
   permit_params  :title, :content, :category, :pdt_date
 
-  menu label: Setting.reports.tag, :priority => 5 
+  menu label: Setting.reports.tag, :priority => 7 
   config.per_page = 20
   config.sort_order = "id_asc"
 

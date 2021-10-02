@@ -2,7 +2,7 @@ ActiveAdmin.register Lab  do
 
   permit_params  :title, :content, :order, :pdt_date
 
-  menu label: Setting.labs.tag, :priority => 1 
+  menu label: Setting.labs.tag, :priority => 4 
   config.per_page = 20
   config.sort_order = "id_asc"
 
