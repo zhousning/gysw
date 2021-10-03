@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Agate"
+  config.site_title = "山东公用水务集团"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -33,7 +33,7 @@ ActiveAdmin.setup do |config|
   #   config.default_namespace = false
   #
   # Default:
-  # config.default_namespace = :admin
+  config.default_namespace = :goldadmin
   #
   # You can customize the settings for each namespace by using
   # a namespace block. For example, to change the site title
