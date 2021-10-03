@@ -8,10 +8,10 @@
     - @notices.each_with_index do |notice, index|
       = link_to notice_path(notice), :class => "list-group-item list-group-item-action" do
         .row
-          .col-10
+          .col-7.col-sm-10.text-truncate
             %p.mb-0.text-truncate
               = notice.title
-          .col-2.text-right
+          .col-5.col-sm-2.text-right
             %p.text-muted.font-weight-light.mb-0
               - if notice.pdt_date 
                 = notice.pdt_date.strftime('%Y-%m-%d')

@@ -1,6 +1,28 @@
+@media screen and (max-width: 720px) {
+  #home-navbar {
+    background: black;
+    color: white;
+    font-size: 20px;
+  }
+  #home-navbar .navbar-brand, #sidebar-list{
+    display: none;
+  }
+  #header-image {
+    display: none;
+  }
+}
 
-body {
-  background: image-url("home-header-main.jpg") top center no-repeat;
+@media screen and (min-width: 720px) {
+  body {
+    background: image-url("home-header-main.jpg") top center no-repeat;
+  }
+  #home-navbar {
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+  }
+  #header-image {
+    display: block;
+  }
 }
 .starter-template {
   padding: 40px 15px;

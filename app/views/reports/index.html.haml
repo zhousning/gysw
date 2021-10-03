@@ -10,11 +10,11 @@
     - @reports.each_with_index do |report, index|
       = link_to report_path(report), :class => "list-group-item list-group-item-action" do
         .row
-          .col-10
+          .col-7.col-sm-10.text-truncate
             %p.mb-0.text-truncate
               = '[' + report_ctg[report.category] + ']'
               = report.title
-          .col-2.text-right
+          .col-5.col-sm-2.text-right
             %p.text-muted.font-weight-light.mb-0
               - if report.pdt_date 
                 = report.pdt_date.strftime('%Y-%m-%d')

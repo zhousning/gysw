@@ -1,7 +1,7 @@
 .container.mt-4.py-3
   .row
-    .col-md-3.sidebar-bg.min-height-info
+    #sidebar-list.col-12.col-md-3.sidebar-bg.min-height-info
       %ul.list-group.list-group-flush.pt-3
         = yield :sidebar_body
-    .col-md-9.bg-white.min-height-900
+    #sidebar-content.col-12.col-md-9.bg-white.min-height-900
       = yield :content_body

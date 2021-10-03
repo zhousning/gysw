@@ -1,33 +1,45 @@
-.container.pt-3.pb-2
+#header-image.container.pt-3.pb-2
   .row
     .col-sm-6.text-left
       -#
         = image_tag "logo.png", :class => "float-left"
-      = image_tag "logo.png", :class => "mt-4"
     .col-sm-2.offset-4.text-right
       = image_tag "lsswgzh.jpg"
 .container.px-0
-  %nav#home-nav.navbar.navbar-dark.bg-primary.p-0
+  %nav#home-navbar.navbar.navbar-expand-lg.navbar-dark.teal.mb-4.p-0
+    %a.navbar-brand.p-0{:href => "#"}
+      = image_tag "logo.png", :class => "d-inline-block align-top"
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.pl-3.mr-auto
+        %li.nav-item.active
+          = link_to root_path, :class => "nav-link  " do
+            首页
+        %li.nav-item.active
+          = link_to labs_path, :class => "nav-link  " do
+            = Setting.labs.tag
+        %li.nav-item.active
+          = link_to reports_path, :class => "nav-link  " do
+            = Setting.reports.tag
+        %li.nav-item.active
+          = link_to activities_path, :class => "nav-link  " do
+            = Setting.activities.tag
+        %li.nav-item.active
+          = link_to results_path, :class => "nav-link  " do
+            业务办理
+        %li.nav-item.active
+          = link_to notices_path, :class => "nav-link  " do
+            = Setting.notices.tag
+        %li.nav-item.active
+          = link_to manages_path, :class => "nav-link  " do
+            = Setting.manages.tag
     -#
       %ul.navbar-nav
       %li.nav-item.dropdown
-        = link_to '#', :id => "one", :class => "nav-link dropdown-toggle text-center", :'data-toggle' => "dropdown", :'aria-haspopup' => 'true' do
+        = link_to '#', :id => "one", :class => "nav-link dropdown-toggle ", :'data-toggle' => "dropdown", :'aria-haspopup' => 'true' do
         .dropdown-menu{:'aria-labelledby' => 'one'}
           %a.dropdown-item 33
-    = link_to root_path, :class => "navbar-brand col mr-0 text-center" do
-      首页
-    = link_to labs_path, :class => "navbar-brand col mr-0 text-center" do
-      = Setting.labs.tag
-    = link_to reports_path, :class => "navbar-brand col mr-0 text-center" do
-      = Setting.reports.tag
-    = link_to activities_path, :class => "navbar-brand col mr-0 text-center" do
-      = Setting.activities.tag
-    = link_to results_path, :class => "navbar-brand col mr-0 text-center" do
-      业务办理
-    = link_to notices_path, :class => "navbar-brand col mr-0 text-center" do
-      = Setting.notices.tag
-    = link_to manages_path, :class => "navbar-brand col mr-0 text-center" do
-      = Setting.manages.tag
   -#
     %ul.w-100.navbar-nav.justify-content-end.px-2
     - unless user_signed_in?

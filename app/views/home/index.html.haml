@@ -32,7 +32,7 @@
                   %p
                     新城政务中心服务大厅梁山水务业务办理窗口
                   客服热线:7366767
-      .col-9
+      .col-12.col-sm-9
         %main{:role => "main"}
           #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
             %ol.carousel-indicators
@@ -48,7 +48,7 @@
             %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
               %span.carousel-control-next-icon{"aria-hidden" => "true"}
               %span.sr-only Next
-      .col-3
+      .col-12.col-sm-3
         .row
           .col-12
             = image_tag "swhms.png", :class => "d-block w-100"
@@ -94,7 +94,7 @@
       .col-12
         = image_tag "syhf.jpg", :class => "w-100"
     .row
-      .col-6.mb-3
+      .col-sm-6.mb-3
         .card.rounded-0
           .card-header.rounded-0.p-2.qijianbox-title
             通知公告
@@ -105,12 +105,12 @@
               - @notices.each do |notice|
                 %li.py-1.text-dark
                   .row
-                    .col-8.text-truncate
+                    .col-7.col-sm-8.text-truncate
                       = link_to notice.title, notice_path(notice), :class => "text-body"
-                    .col-4
+                    .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = notice.pdt_date.strftime('%Y-%m-%d')
-      .col-6.mb-3
+      .col-sm-6.mb-3
         -#
           .row.mb-3
           .col-12
@@ -125,9 +125,9 @@
               - @cmpt_cstrs.each do |cstr|
                 %li.py-1.text-primary
                   .row
-                    .col-8.text-truncate
+                    .col-7.col-sm-8.text-truncate
                       = link_to cstr.title, report_path(cstr), :class => "text-body"
-                    .col-4
+                    .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = cstr.pdt_date.strftime('%Y-%m-%d')
                     -#
@@ -135,7 +135,7 @@
                         %p.text-muted.font-weight-light.mb-0
                           48.00万
 
-      .col-6.mb-3
+      .col-sm-6.mb-3
         .card.rounded-0
           .card-header.rounded-0.p-2.qijianbox-title
             = Setting.reports.ctg_serv
@@ -146,13 +146,13 @@
               - @cmpt_servs.each do |serv|
                 %li.py-1.text-success
                   .row
-                    .col-8.text-truncate
+                    .col-7.col-sm-8.text-truncate
                       = link_to serv.title, report_path(serv), :class => "text-body"
-                    .col-4
+                    .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = serv.pdt_date.strftime('%Y-%m-%d')
 
-      .col-6.mb-3
+      .col-sm-6.mb-3
         .card.rounded-0
           .card-header.rounded-0.p-2.qijianbox-title
             = Setting.reports.ctg_know
@@ -163,16 +163,16 @@
               - @cmpt_knows.each do |know|
                 %li.py-1.text-info
                   .row
-                    .col-8.text-truncate
+                    .col-7.col-sm-8.text-truncate
                       = link_to know.title, report_path(know), :class => "text-body"
-                    .col-4
+                    .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = know.pdt_date.strftime('%Y-%m-%d')
 
 %section.mb-3
   .container
     .row
-      .col-3
+      .col-12.col-sm-3.mb-3
         .card.rounded-0
           .card-header.dangjianbox-title.p-2
             公司党建
@@ -181,7 +181,7 @@
               - @act_cmpts.each do |cmpt|
                 %li.py-1.text-danger
                   = link_to truncate(cmpt.title, :length => 14), activity_path(cmpt), :class => "text-body"
-      .col-9
+      .col-12.col-sm-9
         .row.mb-3
           .col-12
             = image_tag "dangjian.png", :class => "w-100"
@@ -193,9 +193,9 @@
               - @act_orgs.each do |org|
                 %li.py-1.text-danger
                   .row
-                    .col-8.text-truncate
+                    .col-7.col-sm-8.text-truncate
                       = link_to org.title, activity_path(org), :class => "text-body"
-                    .col-4
+                    .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = org.pdt_date.strftime('%Y-%m-%d')
                 -#
@@ -229,7 +229,7 @@
 %section.my-3
   .container
     .row
-      .col-3
+      .col-12.col-sm-3
         .card.rounded-0.mb-3
           .card-header.p-2.rounded-0.qiyezhanting-title
             企业展厅
@@ -265,7 +265,7 @@
                 .col-5
                   = link_to "四川日报", "#", :class => "text-muted"
                 
-      .col-9
+      .col-12.col-sm-9
         .row.mb-3
           .col-12
             = image_tag "shuiwu.jpg", :class => "w-100"

@@ -10,11 +10,11 @@
     - @activities.each_with_index do |activitie, index|
       = link_to activity_path(activitie), :class => "list-group-item list-group-item-action" do
         .row
-          .col-10
+          .col-7.col-sm-10.text-truncate
             %p.mb-0.text-truncate
               = '[' + activity_ctg[activitie.category] + ']'
               = activitie.title
-          .col-2.text-right
+          .col-5.col-sm-2.text-right
             %p.text-muted.font-weight-light.mb-0
               %small
                 - if activitie.pdt_date 
