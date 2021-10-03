@@ -4,24 +4,27 @@ ActiveAdmin.register Report  do
 
   menu label: Setting.reports.tag, :priority => 7 
   config.per_page = 20
-  config.sort_order = "id_asc"
+  config.sort_order = "pdt_date_desc"
 
   
   filter :title, :label => Setting.reports.title
   filter :created_at
 
   index :title=>Setting.reports.tag do
-    selectable_column
-    id_column
+    #selectable_column
+    #id_column
     
+    column "日期", :pdt_date, :sortable=>:pdt_date do |f|
+      f.pdt_date.strftime('%Y-%m-%d')
+    end
     column Setting.reports.title, :title
 
-    column "创建时间", :created_at, :sortable=>:created_at do |f|
-      f.created_at.strftime('%Y-%m-%d %H:%M:%S')
-    end
-    column "更新时间", :updated_at do |f|
-      f.updated_at.strftime('%Y-%m-%d %H:%M:%S')
-    end
+    #column "创建时间", :created_at, :sortable=>:created_at do |f|
+    #  f.created_at.strftime('%Y-%m-%d %H:%M:%S')
+    #end
+    #column "更新时间", :updated_at do |f|
+    #  f.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+    #end
     actions
   end
 
@@ -29,7 +32,7 @@ ActiveAdmin.register Report  do
     f.inputs "" do
       
       f.input :category, :as => :select, :collection => [ [Setting.reports.ctg_cstr, Setting.reports.ctg_cstr_id], [Setting.reports.ctg_serv, Setting.reports.ctg_serv_id], [Setting.reports.ctg_know, Setting.reports.ctg_know_id]], :label => Setting.reports.category, :include_blank => false
-      f.date_field :pdt_date, :value => Date.today
+      f.date_field :pdt_date, :max => Date.today
       f.text_field :title, :placeholder => '请输入文章标题' 
       f.kindeditor :content, :label => Setting.reports.content
     end
