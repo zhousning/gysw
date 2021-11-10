@@ -1,11 +1,11 @@
 ---
 defaults:
-  admins: &1
+  admins: 
     class_name: all
     email: mytea@world.com
     phone: '15859856789'
     password: swjtwater 
-  users: &2
+  users: 
     class_name: User
     opening: 0
     pending: 1
@@ -24,22 +24,22 @@ defaults:
     status: 认证状态
     level: 等级
     inviter: 邀请者
-  roles: &3
+  roles: 
     class_name: Role
     super_admin: 超级管理员
     buyer: 客户信息管理
     tax_category: 商品税收分类编码库管理
     invoice: 发票管理
-  permissions: &4
+  permissions: 
     super_admin: 管理系统所有资源
-  citrines: &5
+  citrines: 
     exchange_max: 300
     count: 可用茶晶
     total: 茶晶总数
-  awards: &6
+  awards: 
     ten_citrine: 10
     one_citrine: 1
-  wares: &7
+  wares: 
     title: 宝贝标题
     price: 价格
     citrine_count: 赠送茶晶数
@@ -51,10 +51,10 @@ defaults:
     up_title: 上架
     down: 0
     down_title: 下架
-  trees: &8
+  trees: 
     name: 名字
     count: 茶树数量
-  leafs: &9
+  leafs: 
     produce_max: 12
     pick: 已采摘
     unpick: 未采摘
@@ -62,7 +62,7 @@ defaults:
     pick_time: 采摘时间
     disable: 0
     enable: 1
-  orders: &10
+  orders: 
     category_none: none
     category_recharge: 账户充值
     paid: paid
@@ -75,7 +75,7 @@ defaults:
     state_trade_created_string: 已创建
     state_trade_success_string: 支付成功
     state_trade_failed_string: 支付失败
-  accounts: &11
+  accounts: 
     coin: 金额
     password: 安全密码
     number: 卡号
@@ -86,7 +86,7 @@ defaults:
     award_invite_recharge: 40
     enable: enable
     disable: disable
-  consumes: &12
+  consumes: 
     number: 消费编号
     category: 项目
     coin_cost: 消费
@@ -107,17 +107,17 @@ defaults:
     status_success: success
     status_failed: failed
     status_exception: exception
-  demands: &13
+  demands: 
     price: 单价
     count: 数量
     enable: enable
     disable: disable
-  sells: &14
+  sells: 
     price: 单价
     count: 数量
     enable: enable
     disable: disable
-  systems: &15
+  systems: 
     poundage: 0.1
     commision: 0.1
     authc_pay: 1
@@ -156,7 +156,7 @@ defaults:
     rejected: 不通过
     passed: 通过
     per_page: 20
-  trade_orders: &16
+  trade_orders: 
     number: 订单编号
     price: 价格
     state: 状态
@@ -176,7 +176,7 @@ defaults:
     completed_title: 已完成
     canceled: canceled
     canceled_title: 已取消
-  extract_cashes: &17
+  extract_cashes: 
     coin: 提取金额
     status: 状态
     pending: pending
@@ -185,7 +185,7 @@ defaults:
     agree_title: 同意
     disagree: disagree
     disagree_title: 不同意
-  share_pools: &18
+  share_pools: 
     today_enter: 今日入账
     total: 月分红池总额度
     user_total: 昨日分红池总额
@@ -195,9 +195,9 @@ defaults:
     diamond: 昨日钻石茶主平均分红
     current_total: 分红池当月总额
     own_tea: 持茶/片所得
-  pick_records: &19
+  pick_records: 
     number: 数量
-  trades: &20
+  trades: 
     min: 交易最低价
     max: 交易最高价
     total_purchase: 今日总求购
@@ -207,26 +207,26 @@ defaults:
     end: 交易结束时间
     start_default: '09:00'
     end_default: '16:00'
-  levels: &21
+  levels: 
     bronze: 青铜茶主
     silver: 白银茶主
     gold: 黄金茶主
     platinum: 铂金茶主
     diamond: 钻石茶主
-  teams: &22
+  teams: 
     children: 我的直推
-  tea_prices: &23
+  tea_prices: 
     price: 今日茶叶价
-  notices: &24
+  notices: 
     tag: 通知公告
     title: 标题
     content: 内容
-  labs: &25
+  labs: 
     tag: 公司概况
     title: 标题
     content: 内容
     order: 顺序
-  members: &26
+  members: 
     tag: 人员队伍
     name: 姓名
     email: 邮箱
@@ -234,12 +234,12 @@ defaults:
     intro: 个人简介
     level: 职称
     photo: 头像
-  results: &27
+  results: 
     tag: 业务办理 
     title: 标题
     content: 正文
     order: 顺序
-  reports: &28
+  reports: 
     tag: 水务新闻 
     title: 标题
     content: 正文
@@ -250,7 +250,7 @@ defaults:
     ctg_cstr_id: '0' 
     ctg_serv_id: '1' 
     ctg_know_id: '2' 
-  activities: &29
+  activities: 
     tag: 党建工作
     title: 标题
     category: 分类
@@ -263,138 +263,34 @@ defaults:
     ctg_org_id:   '1'
     ctg_base_id:  '2'
     ctg_meb_id:   '3' 
-  manages: &30
+  manages: 
     tag: 联系我们 
     title: 标题
     content: 正文
-  meter_reads: &31
-    label: 抄收绩效考核
-    std_sm_wm: 小表标准 (元/块)
-    std_big_wm: 大表标准 (元/块)
-    std_sm_yc: 远传小表标准 (元/块)
-    std_big_yc: 远传大表标准 (元/块)
-    std_vst_wm: 上门催收或收费标准 (元/块)
-    act_sm_read: 小表实际抄表数(不含远传表和上门收费)
-    mst_sm_read: 小表应抄表数(不含远传表和上门收费)
-    act_big_read: 大表实际抄表数(不含远传表和上门收费)
-    mst_big_read: 大表应抄表数(不含远传表和上门收费)
-    act_vst_read: 上门收费实际抄表数
-    mst_vst_read: 上门收费应抄表数
-    act_smyc_read: 小表远传表实际抄表数(人工抄表)
-    mst_smyc_read: 小表远传表应抄表数(人工抄表)
-    act_bigyc_read: 大表远传表实际抄表数(人工抄表)
-    mst_bigyc_read: 大表远传表应抄表数(人工抄表)
-    rcv_count: 系统中已回收水量
-    wtr_count: 系统中总水量
-    smp_fc_count: 抽样复查抄表准确数量
-    smp_count: 抽样复查的总数量
-    name: 姓名
-    cal_date: 统计月份
-  carousels: &32
+  carousels: 
     label: 首页轮播图
     title: 标题
     photo: 轮播图
-  showrooms: &33
+  showrooms: 
     label: 企业展厅 
     title: 标题
     photo: 图片
+  infos: 
+    tag: 信息公开 
+    title: 标题
+    category: 分类
+    content: 正文
+    ctg_cmpt: 公司党建
+    ctg_org: 党建工作
+    ctg_base: 基层党组织建设
+    ctg_meb: 党员队伍建设
+    ctg_cmpt_id:  '0'
+    ctg_org_id:   '1'
+    ctg_base_id:  '2'
+    ctg_meb_id:   '3' 
 development:
-  admins: *1
-  users: *2
-  roles: *3
-  permissions: *4
-  citrines: *5
-  awards: *6
-  wares: *7
-  trees: *8
-  leafs: *9
-  notices: *24
-  orders: *10
-  accounts: *11
-  consumes: *12
-  demands: *13
-  sells: *14
-  systems: *15
-  trade_orders: *16
-  extract_cashes: *17
-  share_pools: *18
-  pick_records: *19
-  trades: *20
-  levels: *21
-  teams: *22
-  tea_prices: *23
-  labs: *25
-  members: *26
-  results: *27
-  reports: *28
-  activities: *29
-  manages: *30
-  meter_reads: *31
-  carousels: *32
-  showrooms: *33
+  <<: *defaults
 test:
-  admins: *1
-  users: *2
-  roles: *3
-  permissions: *4
-  citrines: *5
-  awards: *6
-  wares: *7
-  trees: *8
-  leafs: *9
-  notices: *24
-  orders: *10
-  accounts: *11
-  consumes: *12
-  demands: *13
-  sells: *14
-  systems: *15
-  trade_orders: *16
-  extract_cashes: *17
-  share_pools: *18
-  pick_records: *19
-  trades: *20
-  levels: *21
-  teams: *22
-  tea_prices: *23
-  labs: *25
-  members: *26
-  results: *27
-  reports: *28
-  activities: *29
-  manages: *30
-  meter_reads: *31
+  <<: *defaults
 production:
-  admins: *1
-  users: *2
-  roles: *3
-  permissions: *4
-  citrines: *5
-  awards: *6
-  wares: *7
-  trees: *8
-  leafs: *9
-  notices: *24
-  orders: *10
-  accounts: *11
-  consumes: *12
-  demands: *13
-  sells: *14
-  systems: *15
-  trade_orders: *16
-  extract_cashes: *17
-  share_pools: *18
-  pick_records: *19
-  trades: *20
-  levels: *21
-  teams: *22
-  tea_prices: *23
-  labs: *25
-  members: *26
-  results: *27
-  reports: *28
-  activities: *29
-  manages: *30
-  meter_reads: *31
-  carousels: *32
-  showrooms: *33
+  <<: *defaults

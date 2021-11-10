@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :activities, :only => [:index, :show]
   resources :manages, :only => [:index, :show]
   resources :notices, :only => [:index, :show]
+  resources :infos, :only => [:index, :show]
 
   #resources :controls, :only => [:index]
 
