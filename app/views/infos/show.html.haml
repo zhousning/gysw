@@ -1,0 +1,16 @@
+- provide(:title, t('.title'))
+
+- content_for :sidebar_body do
+  = link_to Setting.reports.tag, reports_path, :class => "list-group-item text-dark"
+  = link_to Setting.activities.tag, activities_path, :class => "list-group-item text-dark"
+
+- content_for :content_body do
+  %h5.text-center.mt-3
+    = @infos.title
+  %p.text-center
+    %small
+      = "发布时间: " +  @infos.pdt_date.strftime('%Y-%m-%d')
+  %hr
+  = @infos.content.nil? ? '' : @infos.content.html_safe
+
+= render "layouts/control_panel"

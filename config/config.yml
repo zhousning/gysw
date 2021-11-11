@@ -1,5 +1,5 @@
 ---
-defaults:
+defaults: &defaults
   admins: 
     class_name: all
     email: mytea@world.com
@@ -240,7 +240,7 @@ defaults:
     content: 正文
     order: 顺序
   reports: 
-    tag: 水务新闻 
+    tag: 水务新闻
     title: 标题
     content: 正文
     category: 分类

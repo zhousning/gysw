@@ -1,0 +1,27 @@
+- provide(:title, t('.title'))
+
+- content_for :sidebar_body do
+  -#
+    = link_to Setting.reports.tag, reports_path, :class => "list-group-item text-dark"
+  = link_to Setting.infos.tag, infos_path, :class => "list-group-item text-dark"
+
+- content_for :content_body do
+  %ul.list-group.list-group-flush
+    - @infos.each_with_index do |info, index|
+      = link_to info_path(info), :class => "list-group-item list-group-item-action" do
+        .row
+          .col-7.col-sm-10.text-truncate
+            %p.mb-0.text-truncate
+              = info.title
+          .col-5.col-sm-2.text-right
+            %p.text-muted.font-weight-light.mb-0
+              %small
+                - if info.pdt_date 
+                  = info.pdt_date.strftime('%Y-%m-%d')
+                - else
+                  = info.created_at.strftime('%Y-%m-%d')
+  .row.mt-3
+    .col-md-12.site-theme-paginate-wrapper.d-flex.justify-content-center
+      = paginate @infos, window: 2, left: 1, right: 1 
+
+= render "layouts/control_panel"
