@@ -32,7 +32,7 @@ ActiveAdmin.register Report  do
     f.inputs "" do
       
       f.input :category, :as => :select, :collection => [ [Setting.reports.ctg_cstr, Setting.reports.ctg_cstr_id], [Setting.reports.ctg_serv, Setting.reports.ctg_serv_id], [Setting.reports.ctg_know, Setting.reports.ctg_know_id]], :label => Setting.reports.category, :include_blank => false
-      f.date_field :pdt_date, :max => Date.today
+      f.date_field :pdt_date, :value => Date.today, :max => Date.today
       f.text_field :title, :placeholder => '请输入文章标题' 
       f.kindeditor :content, :label => Setting.reports.content
     end

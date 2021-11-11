@@ -26,9 +26,9 @@ AdminUser.create!(:phone => Setting.admins.phone, :email => Setting.admins.email
 
 Lab.create!(:title => "公司简介")
 Lab.create!(:title => "组织架构")
-Lab.create!(:title => Setting.reports.ctg_cstr)
-Lab.create!(:title => Setting.reports.ctg_serv)
-Lab.create!(:title => Setting.reports.ctg_know)
+#Lab.create!(:title => Setting.reports.ctg_cstr)
+#Lab.create!(:title => Setting.reports.ctg_serv)
+#Lab.create!(:title => Setting.reports.ctg_know)
 
 Member.create!(:title => "成员队伍")
 

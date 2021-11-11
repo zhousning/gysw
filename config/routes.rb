@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   resources :labs, :only => [:index, :show]
   resources :members, :only => [:index, :show]
   resources :results, :only => [:index, :show]
-  resources :reports, :only => [:index, :show]
+  resources :reports, :only => [:index, :show] do
+    get :cstr, :on => :collection
+    get :serv, :on => :collection
+    get :know, :on => :collection
+  end
   resources :activities, :only => [:index, :show]
   resources :manages, :only => [:index, :show]
   resources :notices, :only => [:index, :show]

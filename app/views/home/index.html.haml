@@ -120,7 +120,7 @@
           .card-header.rounded-0.p-2.qijianbox-title
             = Setting.reports.ctg_cstr
             %span.pull-right
-              = link_to '>>', reports_path, :class => 'text-white' 
+              = link_to '>>', cstr_reports_path, :class => 'text-white' 
           .card-body.px-0.py-1
             %ul.mb-0.pr-3
               - @cmpt_cstrs.each do |cstr|
@@ -139,26 +139,9 @@
       .col-sm-6.mb-3
         .card.rounded-0
           .card-header.rounded-0.p-2.qijianbox-title
-            = Setting.reports.ctg_serv
-            %span.pull-right
-              = link_to '>>', reports_path, :class => 'text-white' 
-          .card-body.px-0.py-1
-            %ul.mb-0.pr-3
-              - @cmpt_servs.each do |serv|
-                %li.py-1.text-success
-                  .row
-                    .col-7.col-sm-8.text-truncate
-                      = link_to serv.title, report_path(serv), :class => "text-body"
-                    .col-5.col-sm-4
-                      %p.text-muted.text-right.font-weight-light.mb-0
-                        = serv.pdt_date.strftime('%Y-%m-%d')
-
-      .col-sm-6.mb-3
-        .card.rounded-0
-          .card-header.rounded-0.p-2.qijianbox-title
             = Setting.reports.ctg_know
             %span.pull-right
-              = link_to '>>', reports_path, :class => 'text-white' 
+              = link_to '>>', know_reports_path, :class => 'text-white' 
           .card-body.px-0.py-1
             %ul.mb-0.pr-3
               - @cmpt_knows.each do |know|
@@ -169,6 +152,23 @@
                     .col-5.col-sm-4
                       %p.text-muted.text-right.font-weight-light.mb-0
                         = know.pdt_date.strftime('%Y-%m-%d')
+
+      .col-sm-6.mb-3
+        .card.rounded-0
+          .card-header.rounded-0.p-2.qijianbox-title
+            = Setting.reports.ctg_serv
+            %span.pull-right
+              = link_to '>>', serv_reports_path, :class => 'text-white' 
+          .card-body.px-0.py-1
+            %ul.mb-0.pr-3
+              - @cmpt_servs.each do |serv|
+                %li.py-1.text-success
+                  .row
+                    .col-7.col-sm-8.text-truncate
+                      = link_to serv.title, report_path(serv), :class => "text-body"
+                    .col-5.col-sm-4
+                      %p.text-muted.text-right.font-weight-light.mb-0
+                        = serv.pdt_date.strftime('%Y-%m-%d')
 
 %section.mb-3
   .container

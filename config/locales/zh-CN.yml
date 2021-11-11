@@ -128,6 +128,12 @@ zh-CN:
       title: "水务新闻"
     show:
       title: "水务新闻"
+    cstr:
+      title: "水务动态"
+    know:
+      title: "知识专栏"
+    serv:
+      title: "员工风采"
   labs:
     index:
       title: 公司概况 
@@ -226,3 +232,8 @@ zh-CN:
     index:
       title:
         我的茶叶
+  infos:
+    index:
+      title: "信息公开"
+    show:
+      title: "信息公开"

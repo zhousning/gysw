@@ -33,14 +33,14 @@ ActiveAdmin.register Activity  do
       
       #f.input :category, :as => :select, :collection => [ [Setting.activities.ctg_cmpt, Setting.activities.ctg_cmpt_id], [Setting.activities.ctg_org, Setting.activities.ctg_org_id], [Setting.activities.ctg_base, Setting.activities.ctg_base_id], [Setting.activities.ctg_meb, Setting.activities.ctg_meb_id]], :label => Setting.activities.category, :include_blank => false
       f.input :category, :as => :select, :collection => [ [Setting.activities.ctg_cmpt, Setting.activities.ctg_cmpt_id], [Setting.activities.ctg_org, Setting.activities.ctg_org_id] ], :label => Setting.activities.category, :include_blank => false
-      f.date_field :pdt_date, :max => Date.today
+      f.date_field :pdt_date, :value => Date.today , :max => Date.today
       f.text_field :title, :placeholder => '请输入文章标题' 
       f.kindeditor :content, :label => Setting.activities.content 
     end
     f.actions
   end
 
-  show :title=>'todo' do
+  show :title=>'党建' do
     attributes_table do
       row "ID" do
         activity.id

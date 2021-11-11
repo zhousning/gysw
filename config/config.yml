@@ -245,8 +245,8 @@ defaults: &defaults
     content: 正文
     category: 分类
     ctg_cstr: 水务动态 
-    ctg_serv: 知识专栏 
-    ctg_know: 员工风采 
+    ctg_serv: 员工风采 
+    ctg_know: 知识专栏
     ctg_cstr_id: '0' 
     ctg_serv_id: '1' 
     ctg_know_id: '2' 

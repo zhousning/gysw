@@ -23,7 +23,7 @@ ActiveAdmin.register Carousel  do
     f.inputs "详情" do
       
       f.input :title, :label => Setting.carousels.title
-      f.label '请上传png或jpg图片，图片尺寸770*380像素，大小小于500K  ' 
+      f.label '请上传png或jpg图片，图片尺寸1860*980像素，大小小于200K  ' 
       f.file_field :file, :accept => "image/png,image/jpeg"
     end
     f.actions

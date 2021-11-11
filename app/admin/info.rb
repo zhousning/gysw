@@ -28,19 +28,16 @@ ActiveAdmin.register Info  do
     actions
   end
 
-  form do |f|
+  form :title=>Setting.infos.tag do |f|
     f.inputs "" do
-      
-      #f.input :category, :as => :select, :collection => [ [Setting.infos.ctg_cmpt, Setting.infos.ctg_cmpt_id], [Setting.infos.ctg_org, Setting.infos.ctg_org_id], [Setting.infos.ctg_base, Setting.infos.ctg_base_id], [Setting.infos.ctg_meb, Setting.infos.ctg_meb_id]], :label => Setting.infos.category, :include_blank => false
-      f.input :category, :as => :select, :collection => [ [Setting.infos.ctg_cmpt, Setting.infos.ctg_cmpt_id], [Setting.infos.ctg_org, Setting.infos.ctg_org_id] ], :label => Setting.infos.category, :include_blank => false
-      f.date_field :pdt_date, :max => Date.today
+      f.date_field :pdt_date, :value => Date.today , :max => Date.today
       f.text_field :title, :placeholder => '请输入文章标题' 
       f.kindeditor :content, :label => Setting.infos.content 
     end
     f.actions
   end
 
-  show :title=>'todo' do
+  show :title=>'信息公开' do
     attributes_table do
       row "ID" do
         activity.id
