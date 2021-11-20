@@ -5,7 +5,7 @@ mysql-setting: &mysql-setting
   pool: 10
   username: <%= ENV['MYSQL_USER'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: localhost
+  host: <%= ENV['MYSQL_HOST'] %>
 
 
 default: &default
